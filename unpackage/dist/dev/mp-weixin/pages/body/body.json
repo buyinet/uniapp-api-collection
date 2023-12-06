@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tabbar": "/pages/body/components/Tabbar",
+    "page-index": "/pages/body/pageComponents/PageIndex",
+    "page-recharge": "/pages/body/pageComponents/PageRecharge"
+  }
+}

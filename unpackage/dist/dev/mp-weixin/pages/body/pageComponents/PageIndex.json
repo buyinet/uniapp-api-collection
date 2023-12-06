@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "kt-nav-bar": "/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar",
+    "ac-banner": "/components/ac-banner/ac-banner",
+    "ac-grid": "/components/ac-grid/ac-grid",
+    "ac-movie-front": "/components/ac-movie-front/ac-movie-front"
+  },
+  "component": true
+}
