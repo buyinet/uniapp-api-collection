@@ -2,8 +2,11 @@
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
   "usingComponents": {
+    "page-mine": "/pages/body/pageComponents/PageMine",
     "tabbar": "/pages/body/components/Tabbar",
     "page-index": "/pages/body/pageComponents/PageIndex",
-    "page-recharge": "/pages/body/pageComponents/PageRecharge"
+    "page-recharge": "/pages/body/pageComponents/PageRecharge",
+    "page-audio": "/pages/body/pageComponents/PageAudio",
+    "page-invite": "/pages/body/pageComponents/PageInvite"
   }
 }

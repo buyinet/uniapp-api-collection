@@ -127,6 +127,7 @@ obj.request = function (options,uuid) {
 				options.stateSuccess(res.data);
 
 				uni.setStorageSync(key, JSON.stringify(res.data[obj.config.responseDataField.bodyData]));
+				return;
 
 			} else if (res.data[obj.config.responseDataField.stateCode] == obj.config.stateCode.notLogin) {
 				uni.navigateTo({
@@ -136,6 +137,7 @@ obj.request = function (options,uuid) {
 				uni.reLaunch({
 					url: obj.config.loginPage
 				});
+				return;
 
 			} else if (404 == res.statusCode){
 					// 重新请求40次

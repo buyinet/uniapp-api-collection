@@ -6,8 +6,12 @@
           @toRecharge="toRecharge"
           v-show="tabbarCodeOfSelected=='index'"></PageIndex>
       <PageRecharge v-show="tabbarCodeOfSelected=='recharge'"></PageRecharge>
+      <PageMine v-show="tabbarCodeOfSelected=='mine'"></PageMine>
+      <PageAudio v-show="tabbarCodeOfSelected=='audio'"></PageAudio>
+      <PageInvite v-show="tabbarCodeOfSelected=='invite'"></PageInvite>
     </scroll-view>
-    <Tabbar ref="tabbar" id="tabbar" class="tabbar"
+    <Tabbar
+      ref="tabbar" id="tabbar" class="tabbar"
     @change="tabbarChange"
     ></Tabbar>
 	</view>
@@ -17,12 +21,18 @@
   import Tabbar from "@/pages/body/components/Tabbar.vue";
   import PageIndex from "@/pages/body/pageComponents/PageIndex.vue";
   import PageRecharge from "@/pages/body/pageComponents/PageRecharge.vue";
+  import PageMine from "@/pages/body/pageComponents/PageMine.vue";
+  import PageAudio from "@/pages/body/pageComponents/PageAudio.vue";
+  import PageInvite from "@/pages/body/pageComponents/PageInvite.vue";
 
 	export default {
     components: {
+      PageMine,
       Tabbar,
       PageIndex,
       PageRecharge,
+      PageAudio,
+      PageInvite,
     },
 		data() {
 			return {
@@ -41,6 +51,7 @@
       uni.createSelectorQuery().select('#tabbar').boundingClientRect((rect) => {
         this.tabbarHeight = rect.height;
       }).exec();
+
     },
 		methods: {
 			tabbarChange(code){

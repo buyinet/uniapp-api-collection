@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "follow-wechat-official-account-popup": "/components/follow-wechat-official-account-popup/follow-wechat-official-account-popup"
+  }
 }

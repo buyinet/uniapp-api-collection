@@ -101,31 +101,31 @@ var components
 try {
   components = {
     ktStatusBarHeight: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uniapp-kantboot/components/kt-status-bar-height/kt-status-bar-height */ "uni_modules/uniapp-kantboot/components/kt-status-bar-height/kt-status-bar-height").then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-status-bar-height/kt-status-bar-height.vue */ 311))
+      return __webpack_require__.e(/*! import() | uni_modules/uniapp-kantboot/components/kt-status-bar-height/kt-status-bar-height */ "uni_modules/uniapp-kantboot/components/kt-status-bar-height/kt-status-bar-height").then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-status-bar-height/kt-status-bar-height.vue */ 349))
     },
     ktNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar */ "uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar.vue */ 235))
+      return __webpack_require__.e(/*! import() | uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar */ "uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar.vue */ 259))
     },
     uRow: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-row/u-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-row/u-row")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-row/u-row.vue */ 242))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-row/u-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-row/u-row")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-row/u-row.vue */ 266))
     },
     uCol: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-col/u-col */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-col/u-col")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-col/u-col.vue */ 250))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-col/u-col */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-col/u-col")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-col/u-col.vue */ 274))
     },
     uIcon: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 258))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 282))
     },
     ktButton: function () {
-      return Promise.all(/*! import() | uni_modules/uniapp-kantboot/components/kt-button/kt-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uniapp-kantboot/components/kt-button/kt-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-button/kt-button.vue */ 267))
+      return Promise.all(/*! import() | uni_modules/uniapp-kantboot/components/kt-button/kt-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uniapp-kantboot/components/kt-button/kt-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-button/kt-button.vue */ 291))
     },
     uDatetimePicker: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-datetime-picker/u-datetime-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-datetime-picker/u-datetime-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-datetime-picker/u-datetime-picker.vue */ 316))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-datetime-picker/u-datetime-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-datetime-picker/u-datetime-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-datetime-picker/u-datetime-picker.vue */ 354))
     },
     sadomasochismPopup: function () {
-      return __webpack_require__.e(/*! import() | components/sadomasochism-popup/sadomasochism-popup */ "components/sadomasochism-popup/sadomasochism-popup").then(__webpack_require__.bind(null, /*! @/components/sadomasochism-popup/sadomasochism-popup.vue */ 325))
+      return __webpack_require__.e(/*! import() | components/sadomasochism-popup/sadomasochism-popup */ "components/sadomasochism-popup/sadomasochism-popup").then(__webpack_require__.bind(null, /*! @/components/sadomasochism-popup/sadomasochism-popup.vue */ 363))
     },
     introductionPopup: function () {
-      return __webpack_require__.e(/*! import() | components/introduction-popup/introduction-popup */ "components/introduction-popup/introduction-popup").then(__webpack_require__.bind(null, /*! @/components/introduction-popup/introduction-popup.vue */ 332))
+      return __webpack_require__.e(/*! import() | components/introduction-popup/introduction-popup */ "components/introduction-popup/introduction-popup").then(__webpack_require__.bind(null, /*! @/components/introduction-popup/introduction-popup.vue */ 370))
     },
   }
 } catch (e) {
@@ -237,7 +237,7 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 var _common = _interopRequireDefault(__webpack_require__(/*! @/commonJs/common */ 232));
 var AvatarSelect = function AvatarSelect() {
   __webpack_require__.e(/*! require.ensure | pages/init/components/AvatarSelect */ "pages/init/components/AvatarSelect").then((function () {
-    return resolve(__webpack_require__(/*! @/pages/init/components/AvatarSelect.vue */ 339));
+    return resolve(__webpack_require__(/*! @/pages/init/components/AvatarSelect.vue */ 377));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -291,7 +291,6 @@ var _default = {
       this.requestParam.genderCode = genderCode;
     },
     nicknameChange: function nicknameChange(e) {
-      console.log(e);
       this.requestParam.nickname = e.detail.value;
     },
     getImageInfo: function getImageInfo(imgSrc) {

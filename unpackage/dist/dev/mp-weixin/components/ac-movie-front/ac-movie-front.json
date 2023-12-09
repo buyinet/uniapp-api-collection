@@ -3,7 +3,7 @@
   "usingComponents": {
     "u-row": "/uni_modules/uview-ui/components/u-row/u-row",
     "u-col": "/uni_modules/uview-ui/components/u-col/u-col",
-    "location-tab": "/components/location-tab/location-tab",
+    "lbs-tab": "/components/lbs-tab/lbs-tab",
     "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon"
   }
 }

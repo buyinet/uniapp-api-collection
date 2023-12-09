@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "user-info-card": "/components/user-info-card/user-info-card"
+  }
+}

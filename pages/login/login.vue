@@ -460,8 +460,9 @@ export default {
           this.loginSuccess(json);
         },
         stateFail: (json) => {
-          console.log(json);
-          this.$refs.ktButton.error(json.errMsg);
+          if(json.errMsg){
+            this.$refs.ktButton.error(json.errMsg);
+          }
           this.isLogining = false;
         }
       });
@@ -498,7 +499,6 @@ export default {
           this.loginSuccess(json);
         },
         stateFail: (json) => {
-          console.log(json);
           this.$refs.ktButton.error(json.errMsg);
           this.isLogining = false;
         }
@@ -589,7 +589,6 @@ export default {
      * @param res
      */
     loginSuccess(res) {
-      console.log(res);
       if(res.data.userInfo.isTemporary){
         // 关闭此页面，前往绑定页面
         uni.redirectTo({

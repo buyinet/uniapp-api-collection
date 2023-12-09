@@ -101,25 +101,25 @@ var components
 try {
   components = {
     ktNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar */ "uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar.vue */ 235))
+      return __webpack_require__.e(/*! import() | uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar */ "uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar.vue */ 259))
     },
     uRow: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-row/u-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-row/u-row")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-row/u-row.vue */ 242))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-row/u-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-row/u-row")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-row/u-row.vue */ 266))
     },
     uCol: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-col/u-col */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-col/u-col")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-col/u-col.vue */ 250))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-col/u-col */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-col/u-col")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-col/u-col.vue */ 274))
     },
     uIcon: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 258))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 282))
     },
     ktButton: function () {
-      return Promise.all(/*! import() | uni_modules/uniapp-kantboot/components/kt-button/kt-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uniapp-kantboot/components/kt-button/kt-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-button/kt-button.vue */ 267))
+      return Promise.all(/*! import() | uni_modules/uniapp-kantboot/components/kt-button/kt-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uniapp-kantboot/components/kt-button/kt-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-button/kt-button.vue */ 291))
     },
     uGrid: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-grid/u-grid */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-grid/u-grid")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-grid/u-grid.vue */ 274))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-grid/u-grid */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-grid/u-grid")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-grid/u-grid.vue */ 298))
     },
     uGridItem: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-grid-item/u-grid-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-grid-item/u-grid-item")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-grid-item/u-grid-item.vue */ 282))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-grid-item/u-grid-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-grid-item/u-grid-item")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-grid-item/u-grid-item.vue */ 306))
     },
   }
 } catch (e) {
@@ -667,8 +667,9 @@ var _default = {
                     _this3.loginSuccess(json);
                   },
                   stateFail: function stateFail(json) {
-                    console.log(json);
-                    _this3.$refs.ktButton.error(json.errMsg);
+                    if (json.errMsg) {
+                      _this3.$refs.ktButton.error(json.errMsg);
+                    }
                     _this3.isLogining = false;
                   }
                 });
@@ -722,7 +723,6 @@ var _default = {
                     _this4.loginSuccess(json);
                   },
                   stateFail: function stateFail(json) {
-                    console.log(json);
                     _this4.$refs.ktButton.error(json.errMsg);
                     _this4.isLogining = false;
                   }
@@ -854,7 +854,6 @@ var _default = {
      * @param res
      */
     loginSuccess: function loginSuccess(res) {
-      console.log(res);
       if (res.data.userInfo.isTemporary) {
         // 关闭此页面，前往绑定页面
         uni.redirectTo({

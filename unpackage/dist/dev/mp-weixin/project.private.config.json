@@ -10,7 +10,28 @@
         {
           "name": "主要页面",
           "pathName": "pages/body/body",
-          "query": "page=recharge",
+          "query": "page=invite",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "账户明细",
+          "pathName": "pages/account/detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "升级合伙人",
+          "pathName": "pages/vip/activatePartner",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "激活会员",
+          "pathName": "pages/vip/activateVip",
+          "query": "",
           "launchMode": "default",
           "scene": null
         },

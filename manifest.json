@@ -71,7 +71,16 @@
             "urlCheck" : false,
             "minified" : true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+		"permission": {
+			"scope.userLocation": {
+				"desc" : "方便用户交水电费和查看电影院"
+			},
+		    "scope.userFuzzyLocation": {
+				"desc" : "方便用户交水电费和查看电影院"
+			}
+		},
+		"requiredPrivateInfos": ["getLocation"]
     },
     "mp-alipay" : {
         "usingComponents" : true

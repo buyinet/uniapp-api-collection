@@ -40,6 +40,33 @@
         "navigationBarTitleText": "初始化",
         "enablePullDownRefresh": false
       }
+    },
+    {
+      "path": "pages/vip/activateVip",
+      "style": {
+        "enablePullDownRefresh": true,
+        "navigationStyle": "default",
+        "navigationBarTitleText": "开通会员",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/vip/activatePartner",
+      "style": {
+        "navigationBarTitleText": "升级合伙人",
+        "enablePullDownRefresh": true,
+        "navigationStyle": "default",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/account/detail",
+      "style": {
+        "navigationBarTitleText": "账户明细",
+        "enablePullDownRefresh": true,
+        "navigationStyle": "default",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
     }
   ],
   "globalStyle": {

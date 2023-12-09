@@ -5,7 +5,9 @@
         <u-col :span="6">
           <view>
             <view style="height:10rpx"></view>
-            <location-tab class="location-tab"></location-tab>
+            <lbs-tab
+                :adlv="2"
+                class="location-tab"></lbs-tab>
           </view>
         </u-col>
         <u-col :span="6">
@@ -86,6 +88,7 @@
                 <view style="font-size: 20rpx">
                   <text style="color:red">省<text>￥1.63</text></text>
                 </view>
+                <view style="font-size: 18rpx;color:#dd524d;">会员再省1元</view>
                 <view style="height: 10rpx"></view>
                 <view style="text-align: center;font-size: 24rpx">
                   <u-row>

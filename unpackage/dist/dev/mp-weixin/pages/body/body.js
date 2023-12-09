@@ -143,24 +143,42 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var Tabbar = function Tabbar() {
   __webpack_require__.e(/*! require.ensure | pages/body/components/Tabbar */ "pages/body/components/Tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/pages/body/components/Tabbar.vue */ 290));
+    return resolve(__webpack_require__(/*! @/pages/body/components/Tabbar.vue */ 314));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var PageIndex = function PageIndex() {
   __webpack_require__.e(/*! require.ensure | pages/body/pageComponents/PageIndex */ "pages/body/pageComponents/PageIndex").then((function () {
-    return resolve(__webpack_require__(/*! @/pages/body/pageComponents/PageIndex.vue */ 297));
+    return resolve(__webpack_require__(/*! @/pages/body/pageComponents/PageIndex.vue */ 321));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var PageRecharge = function PageRecharge() {
   __webpack_require__.e(/*! require.ensure | pages/body/pageComponents/PageRecharge */ "pages/body/pageComponents/PageRecharge").then((function () {
-    return resolve(__webpack_require__(/*! @/pages/body/pageComponents/PageRecharge.vue */ 304));
+    return resolve(__webpack_require__(/*! @/pages/body/pageComponents/PageRecharge.vue */ 328));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var PageMine = function PageMine() {
+  __webpack_require__.e(/*! require.ensure | pages/body/pageComponents/PageMine */ "pages/body/pageComponents/PageMine").then((function () {
+    return resolve(__webpack_require__(/*! @/pages/body/pageComponents/PageMine.vue */ 335));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var PageAudio = function PageAudio() {
+  __webpack_require__.e(/*! require.ensure | pages/body/pageComponents/PageAudio */ "pages/body/pageComponents/PageAudio").then((function () {
+    return resolve(__webpack_require__(/*! @/pages/body/pageComponents/PageAudio.vue */ 342));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var PageInvite = function PageInvite() {
+  __webpack_require__.e(/*! require.ensure | pages/body/pageComponents/PageInvite */ "pages/body/pageComponents/PageInvite").then((function () {
+    return resolve(__webpack_require__(/*! @/pages/body/pageComponents/PageInvite.vue */ 621));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
   components: {
+    PageMine: PageMine,
     Tabbar: Tabbar,
     PageIndex: PageIndex,
-    PageRecharge: PageRecharge
+    PageRecharge: PageRecharge,
+    PageAudio: PageAudio,
+    PageInvite: PageInvite
   },
   data: function data() {
     return {

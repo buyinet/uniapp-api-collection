@@ -45,4 +45,17 @@
   background-color: #fff;
   padding: 0 30rpx 30rpx 30rpx;
 }
+.bottom-tip.data-v-5280f3fd {
+  position: fixed;
+  bottom: 160rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  width: 700rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+}
 

@@ -270,7 +270,6 @@ export default {
      * @param res
      */
     loginSuccess(res) {
-      console.log(res);
       if (!res.data.isInit) {
         // 关闭此页面，前往初始化页面
         uni.redirectTo({

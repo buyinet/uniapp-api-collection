@@ -5,7 +5,10 @@
     "pages/login/register",
     "pages/bind/bind",
     "pages/body/body",
-    "pages/init/init"
+    "pages/init/init",
+    "pages/vip/activateVip",
+    "pages/vip/activatePartner",
+    "pages/account/detail"
   ],
   "subPackages": [],
   "window": {
@@ -15,5 +18,16 @@
     "backgroundColor": "#F8F8F8",
     "navigationStyle": "custom"
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "方便用户交水电费和查看电影院"
+    },
+    "scope.userFuzzyLocation": {
+      "desc": "方便用户交水电费和查看电影院"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
   "usingComponents": {}
 }

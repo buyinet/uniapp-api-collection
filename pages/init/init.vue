@@ -248,7 +248,6 @@ export default {
       this.requestParam.genderCode = genderCode;
     },
     nicknameChange(e) {
-      console.log(e);
       this.requestParam.nickname = e.detail.value;
     },
     getImageInfo(imgSrc) {

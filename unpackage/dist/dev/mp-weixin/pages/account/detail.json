@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "账户明细",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "default",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "u-grid": "/uni_modules/uview-ui/components/u-grid/u-grid",
+    "u-grid-item": "/uni_modules/uview-ui/components/u-grid-item/u-grid-item",
+    "u-divider": "/uni_modules/uview-ui/components/u-divider/u-divider"
+  }
+}

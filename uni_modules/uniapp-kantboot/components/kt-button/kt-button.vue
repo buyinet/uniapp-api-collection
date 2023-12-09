@@ -12,6 +12,7 @@
 			 @click="btnClick()" 
 			@getuserinfo="getuserinfo"
 			:openType="openType"
+      :sessionFrom="sessionFrom"
 			:disable="disable"
 			class="btn" v-if="status=='none'||status=='error-to-none'||status=='to-none'"
 				:style="style"
@@ -58,6 +59,10 @@
 				type: String,
 				default: ""
 			},
+      sessionFrom: {
+        type: String,
+        default: ""
+      },
 			/**
 			 * 是否禁用
 			 */

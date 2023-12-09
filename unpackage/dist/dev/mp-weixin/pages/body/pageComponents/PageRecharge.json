@@ -1,4 +1,5 @@
 {
+  "component": true,
   "usingComponents": {
     "kt-nav-bar": "/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar",
     "u-row": "/uni_modules/uview-ui/components/u-row/u-row",
@@ -8,8 +9,7 @@
     "kt-button": "/uni_modules/uniapp-kantboot/components/kt-button/kt-button",
     "u-radio-group": "/uni_modules/uview-ui/components/u-radio-group/u-radio-group",
     "u-radio": "/uni_modules/uview-ui/components/u-radio/u-radio",
-    "location-tab": "/components/location-tab/location-tab",
+    "lbs-tab": "/components/lbs-tab/lbs-tab",
     "account-number-prompt-popup": "/components/account-number-prompt-popup/account-number-prompt-popup"
-  },
-  "component": true
+  }
 }

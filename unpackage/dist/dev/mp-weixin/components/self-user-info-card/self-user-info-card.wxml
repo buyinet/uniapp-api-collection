@@ -1,0 +1,1 @@
+<view><user-info-card vue-id="71156ae4-1" userInfo="{{userStore.state.selfInfo}}" is-self="{{true}}" bind:__l="__l"></user-info-card></view>

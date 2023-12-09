@@ -1,7 +1,10 @@
 <template>
   <view class="box">
     <view style="height: 20rpx"></view>
-    <u-grid col="3">
+    <!-- 如果tabbarCodeOfSelected == 'invite'，则颜色反转 -->
+    <view
+    >
+    <u-grid col="5">
       <u-grid-item
       @click="select('index')"
       >
@@ -34,6 +37,39 @@
       </u-grid-item>
 
       <u-grid-item
+          @click="select('audio')"
+      >
+        <view>
+          <view>
+            <image
+                v-if="tabbarCodeOfSelected != 'audio'"
+                :src="$kt.file.byPath('icon/audio.svg')" class="icon"></image>
+            <image
+                v-else
+                :src="$kt.file.byPath('icon/audioFill.svg')" class="icon"></image>
+          </view>
+          <view>影视会员</view>
+        </view>
+      </u-grid-item>
+
+      <u-grid-item
+          @click="select('invite')"
+      >
+        <view>
+          <view>
+            <image
+                v-if="tabbarCodeOfSelected != 'invite'"
+                :src="$kt.file.byPath('icon/yaoqing.svg')" class="icon"></image>
+            <image
+                v-else
+                :src="$kt.file.byPath('icon/yaoqingFill.svg')" class="icon"></image>
+          </view>
+          <view>邀请</view>
+        </view>
+      </u-grid-item>
+
+
+      <u-grid-item
       @click="select('mine')">
         <view>
           <view>
@@ -48,6 +84,7 @@
         </view>
       </u-grid-item>
     </u-grid>
+    </view>
     <view style="height: 20rpx"></view>
   </view>
 </template>

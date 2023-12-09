@@ -29,8 +29,9 @@
         <u-row>
           <u-col :span="6">
             <view
-            style="font-size: 40rpx;font-weight: bold;"
-            >话费&电费充值</view>
+                style="font-size: 40rpx;font-weight: bold;"
+            >话费&电费充值
+            </view>
           </u-col>
           <u-col :span="6">
             <view style="text-align: right">
@@ -103,7 +104,8 @@
                   <view style="font-size: 40rpx">50
                     <text style="font-size: 30rpx;margin-left: 5rpx">元</text>
                   </view>
-                  <view style="font-size: 24rpx;color:#666666">售价：48.5元</view>
+                  <view style="font-size: 24rpx;color:#666666;">售价：48.5元</view>
+                  <view style="font-size: 20rpx;color:#dd524d;">会员价：47元</view>
                   <view style="height: 20rpx"></view>
                 </view>
 
@@ -124,6 +126,49 @@
 
             <view style="color:#f56c6c;padding: 20rpx;font-size: 24rpx;text-align: center;"
             >虚拟运营商号码、副卡等特殊号码不支持充值，特别紧急的，马上要停机的号码，建议不要充值
+            </view>
+
+            <view style="height: 30rpx"></view>
+
+            <view style="font-size: 26rpx;">
+              <u-grid :col="3">
+                <u-grid-item>
+                  <view>
+                    <image
+                        style="width: 30rpx;height: 30rpx"
+                        :src="$kt.file.byPath('icon/jilu.svg')"></image>
+                    <view style="display: inline-block;vertical-align: top;margin-left: 5rpx">
+                      充值记录
+                    </view>
+                  </view>
+                </u-grid-item>
+                <u-grid-item>
+                  <view>
+                    <image
+                        style="width: 30rpx;height: 30rpx"
+                        :src="$kt.file.byPath('icon/order.svg')"></image>
+                    <view style="display: inline-block;vertical-align: top;margin-left: 5rpx">
+                      订单售后
+                    </view>
+                  </view>
+                </u-grid-item>
+                <u-grid-item>
+                  <button
+                  open-type="contact"
+                  session-from="sessionFrom"
+                  style="border: none;background-color: rgba(0,0,0,0)"
+                  size="mini"
+                  >
+                    <image
+                        style="width: 30rpx;height: 30rpx"
+                        :src="$kt.file.byPath('icon/customer.svg')"></image>
+                    <view style="display: inline-block;vertical-align: top;margin-left: 5rpx">
+                      联系客服
+                    </view>
+                  </button>
+                </u-grid-item>
+              </u-grid>
+
             </view>
 
           </view>
@@ -211,7 +256,7 @@
                   </view>
                 </u-col>
                 <u-col :span="8.5">
-                  <location-tab></location-tab>
+                  <lbs-tab></lbs-tab>
                 </u-col>
               </u-row>
             </view>
@@ -256,6 +301,7 @@
                       <text style="font-size: 30rpx;margin-left: 5rpx">元</text>
                     </view>
                     <view style="font-size: 24rpx;color:#666666">售价：48.5元</view>
+                    <view style="font-size: 20rpx;color:#dd524d;">会员价：47元</view>
                     <view style="height: 20rpx"></view>
                   </view>
 
@@ -346,12 +392,16 @@
           </view>
           <view style="height: 20rpx"></view>
           <view style="font-size: 28rpx;color: #666666;">
-            <view>1.充值时请认真核对用电户号和所属省份，如因填错用电户号导致充值不到账或充错账户，造成损失的自行承担平台概不负责!</view>
+            <view>
+              1.充值时请认真核对用电户号和所属省份，如因填错用电户号导致充值不到账或充错账户，造成损失的自行承担平台概不负责!
+            </view>
             <view style="height: 20rpx"></view>
             <view>2.充值前请先查询，缴费金额必须大于欠费金额，可在网上国网APP/支付宝/微信: 生活缴费供电余额查询。
             </view>
             <view style="height: 20rpx"></view>
-            <view>3、产品不含票，具体以登录对应运营商营业厅APP为准。充值存在一定失败率，如遇充值失败请联系客服确认问题后可再次下单!</view>
+            <view>
+              3、产品不含票，具体以登录对应运营商营业厅APP为准。充值存在一定失败率，如遇充值失败请联系客服确认问题后可再次下单!
+            </view>
           </view>
 
         </view>
@@ -360,13 +410,11 @@
     </view>
 
 
-
-
     <view style="height: 30rpx;"></view>
     <view style="height: 120rpx"></view>
 
     <account-number-prompt-popup
-    ref="accountNumberPromptPopup"
+        ref="accountNumberPromptPopup"
     ></account-number-prompt-popup>
 
   </view>
@@ -392,7 +440,7 @@ export default {
     mSelect(code) {
       this.mSelected = code;
     },
-    accountNumberPromptPopupOpen(){
+    accountNumberPromptPopupOpen() {
       this.$refs.accountNumberPromptPopup.open();
     }
   },
@@ -504,7 +552,7 @@ export default {
   margin-right: 20rpx;
 }
 
-.account-number-prompt:active{
+.account-number-prompt:active {
   transform: scale(0.9);
 }
 </style>

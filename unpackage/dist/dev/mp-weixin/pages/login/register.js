@@ -101,19 +101,19 @@ var components
 try {
   components = {
     ktNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar */ "uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar.vue */ 235))
+      return __webpack_require__.e(/*! import() | uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar */ "uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar.vue */ 259))
     },
     uRow: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-row/u-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-row/u-row")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-row/u-row.vue */ 242))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-row/u-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-row/u-row")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-row/u-row.vue */ 266))
     },
     uCol: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-col/u-col */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-col/u-col")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-col/u-col.vue */ 250))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-col/u-col */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-col/u-col")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-col/u-col.vue */ 274))
     },
     uIcon: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 258))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 282))
     },
     ktButton: function () {
-      return Promise.all(/*! import() | uni_modules/uniapp-kantboot/components/kt-button/kt-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uniapp-kantboot/components/kt-button/kt-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-button/kt-button.vue */ 267))
+      return Promise.all(/*! import() | uni_modules/uniapp-kantboot/components/kt-button/kt-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uniapp-kantboot/components/kt-button/kt-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uniapp-kantboot/components/kt-button/kt-button.vue */ 291))
     },
   }
 } catch (e) {
