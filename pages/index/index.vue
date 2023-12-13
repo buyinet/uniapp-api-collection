@@ -6,10 +6,13 @@
 <script>
   import i18nStore from "@/store/modules/i18n";
   import userStore from "@/store/modules/user";
+  import acCommonStore from "@/store/modules/acCommon";
+
 	export default {
 		data() {
 			return {
         userStore,
+        acCommonStore,
         ...i18nStore.state,
       }
 		},

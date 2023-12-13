@@ -46,11 +46,12 @@
           <u-grid-item>
             <view  style="margin-bottom: 20rpx;text-align: center">
               <view style="color: #dd524d;font-size: bold;">
-                <text style="font-size: 50rpx;">1</text><text style="font-size: 30rpx">人</text>
+                <text style="font-size: 50rpx;">{{userStore.state.selfInfo.inviteCount}}</text><text style="font-size: 30rpx">人</text>
               </view>
-              <view class="text-a">成功邀请</view>
+              <view class="text-a">直邀人数</view>
             </view>
           </u-grid-item>
+
           <u-grid-item>
             <view  style="margin-bottom: 20rpx;text-align: center">
               <view style="color: #dd524d;font-size: bold;">
@@ -149,7 +150,7 @@
       <button
           style="background-color: #f56c6c;color: #f0f0f0;border-radius: 60rpx;"
           @click="toCopy('CNNC')"
-      >复制直属邀请码：CNNC</button>
+      >复制直属邀请码：{{userStore.state.selfInfo.directCode}}</button>
 
       <view style="height: 150rpx"></view>
     </view>
@@ -162,9 +163,11 @@
 </template>
 
 <script>
+import userStore from "@/store/modules/user";
 export default {
   data() {
     return {
+      userStore,
       ktNavBarHeight: 0,
     };
   },

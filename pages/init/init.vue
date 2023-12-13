@@ -18,7 +18,7 @@
       ></kt-nav-bar>
 
       <view class="box">
-        <view style="height: 350rpx"></view>
+        <view style="height: 150rpx"></view>
         <view class="back-info">
           <image
               v-if="selectedBackShowList.length==0&&!requestParam.genderCode"
@@ -79,26 +79,6 @@
           </view>
         </view>
 
-        <!-- 生日 -->
-        <view style="height: 20px"></view>
-        <view class="box-box">
-          <view class="input-box"
-                @click="selectBirthday()"
-          >
-            <u-row>
-              <u-col :span="2">
-                <u-icon name="calendar" :size="'50rpx'" color="#333333"></u-icon>
-              </u-col>
-              <u-col :span="8">
-                <view v-if="requestParam.gmtBirthday" style="text-align: center">
-                  {{ $kt.util.dateFormat(requestParam.gmtBirthday, "yyyy-MM-dd") }}
-                </view>
-                <view v-else style="text-align: center;color:#666666;">选择生日</view>
-              </u-col>
-            </u-row>
-          </view>
-        </view>
-
         <!-- 性别 -->
         <view style="height: 20px"></view>
         <view class="box-box">
@@ -129,31 +109,51 @@
 
         <view style="height: 20px"></view>
         <view class="box-box">
-          <view class="input-box"
-                @click="$refs.introductionPopup.open(requestParam.introduction)"
-          >
+          <view class="input-box">
             <u-row>
               <u-col :span="2">
-                <u-icon name="tags-fill" :size="'50rpx'" color="#333333"></u-icon>
+                <u-icon name="weixin-fill" :size="'50rpx'" color="#333333"></u-icon>
               </u-col>
               <u-col :span="8">
-                <view style="height: 10rpx"></view>
-                <view
-                v-if="requestParam.introduction"
-                class="text-ellipsis"
-                >
-                  {{requestParam.introduction}}
-                </view>
-                <view
-                    v-else
-                    style="text-align: center;color:#666666;">自我介绍</view>
-                <view style="height: 10rpx"></view>
+                <input
+                    style="border: none;
+                    text-align: center;
+                    background-color: rgba(0,0,0,0)"
+                    :placeholder="'微信（可选）'"
+                    v-model="requestParam.wechat"
+                ></input>
               </u-col>
             </u-row>
           </view>
         </view>
 
-          <!-- 下一步 -->
+        <view style="height: 20px"></view>
+
+        <view class="box-box">
+          <view class="input-box">
+            <u-row>
+              <u-col :span="2">
+                <u-icon name="tags-fill" :size="'50rpx'" color="#333333"></u-icon>
+              </u-col>
+              <u-col :span="8">
+                <input
+                    :disabled="isHasInviteCode"
+                    style="border: none;
+                    text-align: center;
+                    background-color: rgba(0,0,0,0)"
+                    :placeholder="'邀请码（可选）'"
+                    v-model="requestParam.inviteCode"
+                ></input>
+              </u-col>
+            </u-row>
+          </view>
+        </view>
+
+        <kt-keyboard-seize></kt-keyboard-seize>
+
+
+
+        <!-- 下一步 -->
           <view style="height: 20px"></view>
           <view class="box-box">
             <kt-button
@@ -197,6 +197,7 @@
 <script>
 import AvatarSelect from "@/pages/init/components/AvatarSelect.vue";
 import common from "@/commonJs/common";
+import userStore from "@/store/modules/user";
 
 export default {
   // 导入组件
@@ -215,8 +216,11 @@ export default {
         gmtBirthday: '',
         genderCode: '',
         sadomasochismCode: '',
-        introduction: ''
+        introduction: '',
+        wechat: '',
+        inviteCode: '',
       },
+      isHasInviteCode: false,
       showOfBirthdaySelect: false,
       // 生日区间
       birthdayRange: {
@@ -242,6 +246,13 @@ export default {
     uni.createSelectorQuery().select('#ktNavBar').boundingClientRect((rect) => {
       this.ktNavBarHeight = rect.height;
     }).exec();
+  },
+  created() {
+    let inviteCode = uni.getStorageSync("inviteCode");
+    if (inviteCode) {
+      this.requestParam.inviteCode = inviteCode;
+      this.isHasInviteCode = true;
+    }
   },
   methods: {
     changeGenderCode(genderCode) {
@@ -270,18 +281,8 @@ export default {
       this.showOfBirthdaySelect = true;
     },
     async initSelfInfo() {
-      if (!this.selectedAvatarPath) {
-        this.$refs.ktButton.error("请选择头像");
-        return;
-      }
-
       if (!this.requestParam.nickname) {
         this.$refs.ktButton.error("请输入昵称");
-        return;
-      }
-
-      if (!this.requestParam.gmtBirthday) {
-        this.$refs.ktButton.error("请选择生日");
         return;
       }
 
@@ -307,15 +308,27 @@ export default {
               method: "post",
               data: this.requestParam,
               stateSuccess: (res1) => {
+                userStore.setSelfInfo(res1.data);
                 this.$refs.ktButton.success(res1.msg);
                 setTimeout(() => {
                   uni.reLaunch({
                     url: '/pages/body/body'
                   });
                 }, 1000);
+              },
+              stateFail: (res1) => {
+                this.$refs.ktButton.error(res1.errMsg);
               }
             });
             resolve(res);
+          },
+          stateFail: (res) => {
+            uni.showToast({
+              title: res.errMsg,
+              icon: 'none',
+              duration: 2000
+            });
+            reject(res);
           }
         });
       });
@@ -394,7 +407,7 @@ export default {
   top: 0;
   left:0;
   width: 100%;
-  height: 525rpx;
+  height: 325rpx;
   z-index: -1;
 
   .back-info-img{

@@ -24,6 +24,7 @@
   import PageMine from "@/pages/body/pageComponents/PageMine.vue";
   import PageAudio from "@/pages/body/pageComponents/PageAudio.vue";
   import PageInvite from "@/pages/body/pageComponents/PageInvite.vue";
+  import userStore from "@/store/modules/user";
 
 	export default {
     components: {
@@ -36,6 +37,7 @@
     },
 		data() {
 			return {
+        userStore,
         tabbarHeight: 0,
         tabbarCodeOfSelected: 'index',
         option: {},
@@ -53,9 +55,20 @@
       }).exec();
 
     },
+    // 分享给微信好友
+    onShareAppMessage() {
+      return {
+        title: '分享标题',
+        path: '/pages/body/body?inviteCode=' + this.userStore.state.selfInfo.directCode,
+        imageUrl: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      };
+    },
 		methods: {
 			tabbarChange(code){
         this.tabbarCodeOfSelected = code;
+        if(code == 'mine'||code == 'invite'){
+          this.userStore.requestUserInfoSelf();
+        }
       },
       toRecharge(){
         if(this.tabbarCodeOfSelected != 'index'){

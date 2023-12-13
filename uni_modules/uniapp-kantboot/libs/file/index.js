@@ -15,7 +15,7 @@ let visit = function (id) {
  * @return 返回一个函数，调用该函数返回查看文件的url
 */
 let byId = function (uuid) {
-	var url = `${kt.request.config.rootAddress}/system/file/visitFile/${uuid}`;
+	var url = `${kt.request.config.rootAddress}/system/file/visit/${uuid}`;
 	return url;
 }
 

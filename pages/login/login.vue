@@ -591,6 +591,7 @@ export default {
     loginSuccess(res) {
       if(res.data.userInfo.isTemporary){
         // 关闭此页面，前往绑定页面
+        console.log("该账号是临时账号，前往绑定");
         uni.redirectTo({
           url: '/pages/bind/bind'
         });
@@ -599,6 +600,7 @@ export default {
 
       if (!res.data.userInfo.isInit) {
         // 关闭此页面，前往初始化页面
+        console.log("该账号未初始化，前往初始化");
         uni.redirectTo({
           url: '/pages/init/init'
         });
@@ -607,9 +609,11 @@ export default {
 
       // 判断是否有上一页
       if (getCurrentPages().length > 1) {
+        console.log("有上一页，返回上一页");
         uni.navigateBack();
       } else {
-        uni.navigateTo({
+        console.log("没有上一页，前往首页");
+        uni.redirectTo({
           url: '/pages/body/body'
         });
       }

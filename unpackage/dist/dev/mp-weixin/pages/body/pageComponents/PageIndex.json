@@ -1,5 +1,4 @@
 {
-  "component": true,
   "usingComponents": {
     "kt-nav-bar": "/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar",
     "ac-banner": "/components/ac-banner/ac-banner",
@@ -7,5 +6,6 @@
     "ac-movie-front": "/components/ac-movie-front/ac-movie-front",
     "u-button": "/uni_modules/uview-ui/components/u-button/u-button",
     "follow-wechat-official-account-popup": "/components/follow-wechat-official-account-popup/follow-wechat-official-account-popup"
-  }
+  },
+  "component": true
 }

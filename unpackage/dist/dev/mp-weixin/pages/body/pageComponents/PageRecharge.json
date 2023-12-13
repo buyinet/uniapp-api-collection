@@ -1,5 +1,4 @@
 {
-  "component": true,
   "usingComponents": {
     "kt-nav-bar": "/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar",
     "u-row": "/uni_modules/uview-ui/components/u-row/u-row",
@@ -11,5 +10,6 @@
     "u-radio": "/uni_modules/uview-ui/components/u-radio/u-radio",
     "lbs-tab": "/components/lbs-tab/lbs-tab",
     "account-number-prompt-popup": "/components/account-number-prompt-popup/account-number-prompt-popup"
-  }
+  },
+  "component": true
 }

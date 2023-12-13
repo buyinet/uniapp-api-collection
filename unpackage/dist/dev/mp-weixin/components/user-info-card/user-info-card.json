@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "wechat-set-popup": "/components/wechat-set-popup/wechat-set-popup"
+  }
 }

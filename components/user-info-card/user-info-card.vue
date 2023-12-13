@@ -1,10 +1,10 @@
 <template>
   <view class="box">
     <view>
-      <image src="https://img.yzcdn.cn/vant/cat.jpeg"
+      <view style="height: 20rpx"></view>
+      <image :src="$kt.file.visit(userInfo.fileIdOfAvatar)"
              mode="aspectFill"
-             class="avatar"
-      />
+             class="avatar"/>
     </view>
     <view
     style="vertical-align: top;margin-left: 20rpx"
@@ -54,8 +54,8 @@
 
         <text
             v-if="userInfo.directCode"
-            class="small-text">直属码：DSKN <text
-            @click.prevent="toCopy('DSKN')"
+            class="small-text">直属码：{{userInfo.directCode}} <text
+            @click.prevent="toCopy(userInfo.directCode)"
             class="text-btn">复制</text>
         </text>
 
@@ -64,31 +64,54 @@
             class="small-text">直属码：<text
           <text class="text-btn"
                 v-if="isSelf"
+                @click.prevent="generateSelfDirectCode"
           >生成</text>
           <text
               v-else
-              @click.prevent="toCopy(userInfo.wechat)"
+              @click.prevent="toCopy(userInfo.directCode)"
           >暂无</text>
         </text>
 
-        <text class="small-text">微信号：
+        <view v-if="userInfo.directCode&&userInfo.wechat"></view>
+
+        <text
+            v-if="!userInfo.wechat"
+            class="small-text">微信号：
           <text class="text-btn"
           v-if="isSelf"
+                @click="$refs.wechatSetPopup.open()"
           >设置</text>
           <text
                 v-else
-                @click.prevent="toCopy(userInfo.wechat)"
           >暂无</text>
         </text>
+
+        <text
+            v-if="userInfo.wechat"
+            class="small-text">微信：{{userInfo.wechat}} <text
+            @click.prevent="toCopy(userInfo.wechat)"
+            class="text-btn">复制</text>
+        </text>
+
+
       </view>
     </view>
+
+    <wechat-set-popup ref="wechatSetPopup"></wechat-set-popup>
 
   </view>
 </template>
 
 <script>
+import userStore from '@/store/modules/user'
+import user from "@/store/modules/user";
 
 export default {
+  computed: {
+    user() {
+      return user
+    }
+  },
   props: {
     userInfo: {
       type: Object,
@@ -103,9 +126,14 @@ export default {
   },
   data() {
     return {
+
+
+
     };
   },
   methods: {
+
+
     toCopy(text) {
       uni.setClipboardData({
         data: text,
@@ -127,6 +155,20 @@ export default {
         phoneStr = phoneStr.substring(3);
       }
       return phoneStr.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+    },
+    /**
+     * 生成直属邀请码
+     */
+    generateSelfDirectCode(){
+      this.$request({
+        url: '/system-user-web/user/generateSelfDirectCode',
+        method: 'POST',
+        data: {},
+        stateSuccess: (res) => {
+          userStore.setSelfInfo(res.data);
+          this.userInfo = res.data;
+        }
+      });
     }
   }
 }

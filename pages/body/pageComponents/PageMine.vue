@@ -152,7 +152,10 @@
         </button>
         <view style="height: 30rpx;"></view>
         <view>
-          <kt-button>退出登录</kt-button>
+          <kt-button
+              ref="logoutBtn"
+          @click="logout"
+          >退出登录</kt-button>
         </view>
       </view>
 
@@ -217,6 +220,20 @@ export default {
   methods: {
     toRecharge() {
       this.$emit('toRecharge');
+    },
+    logout() {
+      this.$refs.logoutBtn.loading();
+      this.$request({
+        url: '/system-user-web/user/logout',
+        method: 'POST',
+        stateSuccess: res => {
+          uni.removeStorageSync('token');
+          uni.removeStorageSync('userInfo');
+          uni.reLaunch({
+            url: '/pages/login/login'
+          });
+        }
+      })
     }
   },
 }

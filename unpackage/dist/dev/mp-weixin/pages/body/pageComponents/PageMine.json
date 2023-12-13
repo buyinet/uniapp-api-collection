@@ -1,5 +1,4 @@
 {
-  "component": true,
   "usingComponents": {
     "kt-nav-bar": "/uni_modules/uniapp-kantboot/components/kt-nav-bar/kt-nav-bar",
     "self-user-info-card": "/components/self-user-info-card/self-user-info-card",
@@ -9,5 +8,6 @@
     "u-grid-item": "/uni_modules/uview-ui/components/u-grid-item/u-grid-item",
     "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
     "kt-button": "/uni_modules/uniapp-kantboot/components/kt-button/kt-button"
-  }
+  },
+  "component": true
 }

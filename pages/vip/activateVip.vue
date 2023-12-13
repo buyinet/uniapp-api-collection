@@ -27,7 +27,7 @@
           </u-grid-item>
         </u-grid>
         <view style="height: 30rpx"></view>
-        <kt-button>￥9.9/年 立即开通</kt-button>
+        <kt-button>￥{{acCommonStore.state.setting.vipPriceOfYear}}/年 立即开通</kt-button>
         <view style="height: 30rpx"></view>
         <view
             style="font-size: 28rpx;"
@@ -75,6 +75,7 @@
 
 <script>
 import text from "@/uni_modules/uview-ui/libs/config/props/text";
+import acCommonStore from "@/store/modules/acCommon";
 
 export default {
   computed: {
@@ -84,6 +85,7 @@ export default {
   },
   data() {
     return {
+      acCommonStore,
       // 会员权益的list
       vipRightsList: [
         {

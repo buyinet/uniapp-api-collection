@@ -10,7 +10,7 @@
         <view>
           <text
           style="font-size: 60rpx; color: #fff;"
-          >0</text>
+          >{{userStore.state.selfInfo.balance.score}}</text>
 
           <view
               style="display: inline-block;padding: 5rpx 15rpx;background-color: #666666;color: #FFFFFF;
@@ -21,7 +21,12 @@
               margin-left: 20rpx;
                 "
           >
-            约0元
+            <text
+            v-if="isCalculating"
+            >计算中</text>
+            <text
+            v-else
+            >约{{scoreToRmb}}元</text>
           </view>
         </view>
 
@@ -61,7 +66,7 @@
         <view style="background-color: rgba(118,118,118,.6);color:#FFFFFF;
 position: absolute;bottom: 0;width: 100%;left:0;border-radius: 0 0 20rpx 20rpx;font-size: 26rpx;padding: 20rpx;box-sizing: border-box;
 ">
-          汇率：1000积分=1元
+          汇率：{{acCommonStore.state.setting.moneyOfOneToScore}}积分=1元
         </view>
 
         <view style="height: 20rpx"></view>
@@ -102,10 +107,35 @@ position: absolute;bottom: 0;width: 100%;left:0;border-radius: 0 0 20rpx 20rpx;f
 </template>
 
 <script>
+import acCommonStore from "@/store/modules/acCommon";
+import userStore from "@/store/modules/user";
 export default {
   data() {
-    return {};
-  }
+    return {
+      acCommonStore,
+      userStore,
+      // 是否计算中
+      isCalculating: false,
+      // 积分余额对应的人民币
+      scoreToRmb: 0,
+    };
+  },
+  created() {
+    this.getSelfBalanceScoreToRmb();
+  },
+  methods: {
+    getSelfBalanceScoreToRmb(){
+      this.isCalculating = true;
+      this.$request({
+        url: "/business-ac-web/ac/common/getSelfBalanceScoreToRmb",
+        method: "POST",
+        stateSuccess:(res)=>{
+          this.scoreToRmb = res.data;
+          this.isCalculating = false;
+        }
+      })
+    }
+  },
 }
 </script>
 

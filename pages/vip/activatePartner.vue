@@ -7,7 +7,7 @@
         <u-grid-item>
           <view class="grid">
             <view>
-              <text style="font-weight: bold;">1<text style="font-size: 24rpx">人</text></text>
+              <text style="font-weight: bold;">{{userStore.state.selfInfo.inviteCount}}<text style="font-size: 24rpx">人</text></text>
             </view>
             <view class="text">直邀粉丝</view>
           </view>
@@ -15,7 +15,9 @@
         <u-grid-item>
           <view class="grid">
             <view>
-              <text style="font-weight: bold;">1<text style="font-size: 24rpx">人</text></text>
+              <text style="font-weight: bold;">
+                {{userStore.state.selfInfo.inviteCountIndirect}}
+                <text style="font-size: 24rpx">人</text></text>
             </view>
             <view class="text">间邀粉丝</view>
           </view>
@@ -32,11 +34,12 @@
       <view style="height: 20rpx"></view>
       <view style="padding: 20rpx;box-sizing: border-box">
         <view class="uu"
+              v-if="userStore.state.selfInfo.inviteUser&&userStore.state.selfInfo.inviteUser.phone"
         @click="$refs.userInfoCardPopup.open()"
         >
           <u-row>
             <u-col :span="11">
-              我的邀请人：131****1234
+              我的邀请人：{{hidePhone(userStore.state.selfInfo.inviteUser.phone)}}
             </u-col>
             <u-col :span="1">
               <view class="text">
@@ -45,6 +48,23 @@
               </u-col>
           </u-row>
         </view>
+
+        <view class="uu"
+              v-else-if="userStore.state.selfInfo.inviteUser"
+              @click="$refs.userInfoCardPopup.open()"
+        >
+          <u-row>
+            <u-col :span="11">
+              我的邀请人
+            </u-col>
+            <u-col :span="1">
+              <view class="text">
+                <u-icon name="arrow-right" size="30rpx"></u-icon>
+              </view>
+            </u-col>
+          </u-row>
+        </view>
+
       </view>
     </view>
     <view style="height: 40rpx;background-color: #f0f0f0;"></view>
@@ -166,6 +186,7 @@
     ></view>
 
     <user-info-card-popup
+        :user-info="userStore.state.selfInfo.inviteUser"
     ref="userInfoCardPopup"
     ></user-info-card-popup>
 
@@ -174,6 +195,8 @@
 
 <script>
 import text from "@/uni_modules/uview-ui/libs/config/props/text";
+import userStore from "@/store/modules/user";
+import acCommonStore from "@/store/modules/acCommon";
 
 export default {
   computed: {
@@ -183,6 +206,8 @@ export default {
   },
   data() {
     return {
+      userStore,
+      acCommonStore,
       subsectionList: ['合伙人','高级合伙人'],
       subsectionCurNow: 0,
       list:[[
@@ -241,10 +266,23 @@ export default {
       ]
     };
   },
+  created() {
+    this.userStore.requestUserInfoSelf();
+  },
   methods: {
     subsectionChange(e){
       this.subsectionCurNow = e;
-    }
+    },
+    /**
+     * 隐藏手机号中间四位
+     */
+    hidePhone(phone) {
+      let phoneStr = phone+"";
+      if(phone.startsWith('+86')){
+        phoneStr = phoneStr.substring(3);
+      }
+      return phoneStr.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+    },
   },
 }
 </script>

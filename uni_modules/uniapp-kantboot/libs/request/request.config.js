@@ -1,10 +1,14 @@
-var config={
-	"rootAddress":"http://127.0.0.1:10002",
+// let rootAddress = "https://ac.aaarfyh.com";
+let rootAddress = "http://127.0.0.1:10002";
 
-	"uploadAddress": "http://127.0.0.1:10002/functional-file/file/upload",
+var config={
+
+	"rootAddress":rootAddress,
+
+	"uploadAddress": rootAddress+"/functional-file-web/file/upload",
 	
 	// 文件访问地址
-	"fileAddress": "http://127.0.0.1:10002/functional-file",
+	"fileAddress": rootAddress+"/functional-file-web",
 	
 	"rootWebSocketAddressList":[
 		"ws://heimi.kantboot.com/taskSocket"
